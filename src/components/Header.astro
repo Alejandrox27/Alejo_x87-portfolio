@@ -1,10 +1,12 @@
 <header class="header flex w-[100%] z-[100] fixed">
     <div class="flex justify-between px-20 py-5 w-[100%] z-30">
-        <a href="/" class="flex-grow font-bold text-2xl text-[#FAF0E6]">Alejo<span class="text-[#865DFF]">Dev</span></a>
-        <ul class="flex flex-grow text-xl text-[#FAF0E6] max-w-[400px] justify-between align-middle">
-            <a href="#">Proyects</a>
-            <a href="#skills">Skills</a>
-            <a href="#">About me</a>
+        <div class="flex-grow">
+            <a href="/" class="font-bold text-2xl text-[#FAF0E6]">Alejo<span class="text-[#865DFF]">Dev</span></a>
+        </div>
+        <ul id="header-list" class="flex flex-grow text-xl text-[#FAF0E6] max-w-[400px] justify-between align-middle">
+            <li class="px-[15px]"><a href="#">Proyects</a></li>
+            <li class="px-[15px]"><a href="#skills">Skills</a></li>
+            <li class="px-[15px]"><a href="#">About me</a></li>
         </ul>
     </div>
     <div class="flex absolute w-[100%] h-screen justify-start align-top pointer-events-none">
@@ -24,4 +26,37 @@
             </g>
           </svg>
     </div>
+    <div
+    id="menu-backdrop"
+    class="absolute bg-white/5 backdrop-blur-lg rounded-full
+    translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0
+    w-[var(--width)] h-[var(--height)]
+    transition-all duration-300
+    ease-in-out opacity-0 z-25 object-center
+    ">
+
+    </div>
 </header>
+
+<script>
+    const listItems = document.querySelectorAll("#header-list li")
+    const menuBackdrop = document.getElementById("menu-backdrop") as HTMLElement
+
+    listItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const {left, top, width, height} = item.getBoundingClientRect()
+
+            menuBackdrop.style.setProperty("--left", `${left}px`)
+            menuBackdrop.style.setProperty("--top", `${top}px`)
+            menuBackdrop.style.setProperty("--width", `${width}px`)
+            menuBackdrop.style.setProperty("--height", `${height}px`)
+
+            menuBackdrop.style.opacity = "1"
+            menuBackdrop.style.visibility = "visible"
+        })
+        item.addEventListener('mouseleave', () => {
+            menuBackdrop.style.opacity = "0"
+            menuBackdrop.style.visibility = 'hidden'
+        })
+    })
+</script>

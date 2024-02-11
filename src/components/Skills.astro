@@ -123,6 +123,9 @@
 
     .slider .slide-track{
         display: flex;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
         animation: scroll 40s linear infinite;
         -webkit-animation: scroll 40s linear infinite;
         width: calc(120px * 36);
@@ -131,6 +134,14 @@
 
     .slider .slide {
         width: 120px;
+    }
+
+    .slider .slide {
+        transition: all .2s ease-in-out;
+    }
+
+    .slider .slide:hover {
+        transform: scale(1.1);
     }
 
     .slider .slide img{
