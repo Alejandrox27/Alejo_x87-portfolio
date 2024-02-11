@@ -6,9 +6,10 @@
 
         <div class="header-options flex justify-center w-[100%] max-sm:absolute -top-[300px] -z-10 max-sm:pt-[50px] pb-8 left-0 sm:items-end sm:justify-end sm:bg-transparent transition-all duration-700">
             <ul id="header-list" class="flex flex-col text-xl items-center transition-all text-[#FAF0E6] w-[100%] justify-between sm:flex-row sm:justify-end">
-                <li class="px-[15px]"><a href="#">Proyects</a></li>
+                <li class="px-[15px]"><a href="#proyects">Proyects</a></li>
                 <li class="px-[15px]"><a href="#skills">Skills</a></li>
                 <li class="px-[15px]"><a href="#">About me</a></li>
+                <li class="px-[15px]"><a href="https://github.com/Alejandrox27?tab=repositories" target="_blank">Github proyects</a></li>
             </ul>
         </div>
 
@@ -16,7 +17,7 @@
             <input id="menu" type="checkbox" role="button" aria-label="Display the menu" class="menu">
         </div>
     </div>
-    <div class="flex absolute w-[100%] h-screen justify-start align-top pointer-events-none">
+    <div class="flex absolute w-[100vw] min-w-[1200px] h-screen justify-start align-top pointer-events-none">
         <svg id="waves" width="100%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto" shape-rendering="auto" fill="#ffffff" class="rotate-180 h-[32%] transition-all duration-500">
             <defs>
              <path id="wavepath" d="M 0 2000 0 500 Q 128.5 381 257 500 t 257 0 257 0 257 0 257 0 257 0  v1000 z" />
@@ -130,12 +131,12 @@ body {
             wave.classList.remove("h-[32%]");
             wave.classList.add("h-[100%]");
             headerOptions.classList.remove("-top-[300px]");
-            headerOptions.classList.add("top-[100px]");
+            headerOptions.classList.add("top-[60px]");
         }else {
             wave.classList.remove("h-[100%]");
             wave.classList.add("h-[32%]");
             headerOptions.classList.add("-top-[300px]");
-            headerOptions.classList.remove("top-[100px]");
+            headerOptions.classList.remove("top-[60px]");
         }
     })
 
