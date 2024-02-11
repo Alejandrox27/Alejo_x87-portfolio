@@ -1,22 +1,29 @@
 <header class="header flex w-[100%] z-[100] fixed">
-    <div class="flex justify-between px-20 py-5 w-[100%] z-30">
-        <div class="flex-grow">
+    <div class="flex justify-between px-10 py-5 w-[100%] z-30 h-[100%]">
+        <div>
             <a href="/" class="font-bold text-2xl text-[#FAF0E6]">Alejo<span class="text-[#865DFF]">Dev</span></a>
         </div>
-        <ul id="header-list" class="flex flex-grow text-xl text-[#FAF0E6] max-w-[400px] justify-between align-middle">
-            <li class="px-[15px]"><a href="#">Proyects</a></li>
-            <li class="px-[15px]"><a href="#skills">Skills</a></li>
-            <li class="px-[15px]"><a href="#">About me</a></li>
-        </ul>
+
+        <div class="header-options flex justify-center w-[100%] max-sm:absolute -top-[300px] -z-10 max-sm:pt-[50px] pb-8 left-0 sm:items-end sm:justify-end sm:bg-transparent transition-all duration-700">
+            <ul id="header-list" class="flex flex-col text-xl items-center transition-all text-[#FAF0E6] w-[100%] justify-between sm:flex-row sm:justify-end">
+                <li class="px-[15px]"><a href="#">Proyects</a></li>
+                <li class="px-[15px]"><a href="#skills">Skills</a></li>
+                <li class="px-[15px]"><a href="#">About me</a></li>
+            </ul>
+        </div>
+
+        <div id="menu-container" class="sm:hidden">
+            <input id="menu" type="checkbox" role="button" aria-label="Display the menu" class="menu">
+        </div>
     </div>
     <div class="flex absolute w-[100%] h-screen justify-start align-top pointer-events-none">
-        <svg width="100%" height="32%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto" shape-rendering="auto" fill="#ffffff" class="rotate-180">
+        <svg id="waves" width="100%" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto" shape-rendering="auto" fill="#ffffff" class="rotate-180 h-[32%] transition-all duration-500">
             <defs>
-             <path id="wavepath" d="M 0 2000 0 500 Q 84 364 168 500 t 168 0 168 0 168 0 168 0 168 0 168 0 168 0  v1000 z" />
-             <path id="motionpath" d="M -336 0 0 0" /> 
+             <path id="wavepath" d="M 0 2000 0 500 Q 128.5 381 257 500 t 257 0 257 0 257 0 257 0 257 0  v1000 z" />
+             <path id="motionpath" d="M -514 0 0 0" /> 
             </defs>
             <g >
-             <use xlink:href="#wavepath" y="95" fill="#191825">
+             <use xlink:href="#wavepath" y="74" fill="#200c41">
              <animateMotion
               dur="5s"
               repeatCount="indefinite">
@@ -32,15 +39,105 @@
     translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0
     w-[var(--width)] h-[var(--height)]
     transition-all duration-300
-    ease-in-out opacity-0 z-25 object-center
+    ease-in-out opacity-0 z-35 object-center
     ">
 
     </div>
 </header>
 
+<style>
+.menu {
+  --s: 30px; /* control the size */
+  --c: white; /* the color */
+  
+  height: var(--s);
+  aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  border-inline: calc(var(--s)/2) solid #0000; 
+  box-sizing: content-box;
+  --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+         no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+         repeat-y content-box border-box;
+  background: 
+    var(--_g2) left  var(--_p,0px) top,
+    var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+    var(--_g2) right var(--_p,0px) top,
+    var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+  background-size: 
+    20% 80%,
+    40% 100%;
+  position: relative;
+  clip-path: inset(0 25%);
+  -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+  cursor: pointer;
+  transition: 
+    background-position .3s var(--_s,.3s), 
+    clip-path 0s var(--_s,.6s);
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+.menu:before,
+.menu:after {
+  content:"";
+  position: absolute;
+  border-radius: var(--s);
+  inset: 40% 0;
+  background: var(--c);
+  transition: transform .3s calc(.3s - var(--_s,.3s));
+}
+
+.menu:checked {
+  clip-path: inset(0);
+  --_p: calc(-1*var(--s));
+  --_s: 0s;
+}
+
+.menu:checked:before {
+  transform: rotate(45deg);
+}
+.menu:checked:after {
+  transform: rotate(-45deg);
+}
+.menu:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
+}
+
+body {
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-content:center;
+}
+</style>
+
 <script>
-    const listItems = document.querySelectorAll("#header-list li")
-    const menuBackdrop = document.getElementById("menu-backdrop") as HTMLElement
+    const listItems = document.querySelectorAll("#header-list li");
+    const menuBackdrop = document.getElementById("menu-backdrop") as HTMLElement;
+    
+    const burgerButton = document.querySelector("#menu-container #menu");
+    const wave = document.querySelector("#waves");
+    const headerOptions = document.querySelector(".header-options");
+
+    burgerButton.addEventListener('click', () => {
+        if(burgerButton.checked){
+            wave.classList.remove("h-[32%]");
+            wave.classList.add("h-[100%]");
+            headerOptions.classList.remove("-top-[300px]");
+            headerOptions.classList.add("top-[100px]");
+        }else {
+            wave.classList.remove("h-[100%]");
+            wave.classList.add("h-[32%]");
+            headerOptions.classList.add("-top-[300px]");
+            headerOptions.classList.remove("top-[100px]");
+        }
+    })
 
     listItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
