@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="alejo-image-container">
-        <img src="/alejodev-image.jpg" alt="profile image" class="max-w-[400px]">
+        <img src="/alejodev-image.jpg" alt="profile image" class="max-w-[400px] object-cover">
     </div>
 </section>
 <style>
@@ -15,8 +15,17 @@
         animation: animate-radius 15s linear infinite;
     }
 
+    @keyframes blob-turn{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    
     @keyframes animate-radius {
-        0% {
+        0%, 100% {
             border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
         }
         30% {
@@ -27,9 +36,6 @@
         }
         70% {
             border-radius: 77% 33% 30% 70% / 60% 54% 60% 40%;
-        }
-        100% {
-            border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
         }
     }
 </style>
