@@ -1,4 +1,4 @@
-<section class="bg-[#27005D] h-screen w-[100%] px-44 flex justify-around items-center">
+<section id="skills" class="bg-[#191825] h-screen w-[100%] flex justify-around items-center">
     <div class="slider">
         <div class="slide-track">
             <div class="slide">
@@ -115,7 +115,7 @@
 </section>
 <style>
     .slider{
-        width: 70vw;
+        width: 90vw;
         height: auto;
         margin:auto;
         overflow: hidden;
@@ -125,11 +125,12 @@
         display: flex;
         animation: scroll 40s linear infinite;
         -webkit-animation: scroll 40s linear infinite;
-        width: calc(200px * 36);
+        width: calc(120px * 36);
+        gap: 20px;
     }
 
     .slider .slide {
-        width: 200px;
+        width: 120px;
     }
 
     .slider .slide img{
@@ -142,8 +143,8 @@
             transform: translateX(0);
         }
         100%{
-            -webkit-transform: translateX(calc(-200px * 18));
-            transform: translateX(calc(-200px * 18));
+            -webkit-transform: translateX(calc(-120px * 18));
+            transform: translateX(calc(-120px * 18));
         }
     }
 </style>
