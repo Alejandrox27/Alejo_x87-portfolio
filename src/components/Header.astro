@@ -6,10 +6,10 @@
 
         <div class="header-options flex justify-center w-[100%] max-sm:absolute -top-[300px] -z-10 max-sm:pt-[50px] pb-8 left-0 sm:items-end sm:justify-end sm:bg-transparent transition-all duration-700">
             <ul id="header-list" class="flex flex-col text-xl items-center transition-all text-[#FAF0E6] w-[100%] justify-between sm:flex-row sm:justify-end">
-                <li class="px-[15px]"><a href="#proyects">Proyects</a></li>
+                <li class="px-[15px]"><a href="#proyects">Projects</a></li>
                 <li class="px-[15px]"><a href="#skills">Skills</a></li>
                 <li class="px-[15px]"><a href="#">About me</a></li>
-                <li class="px-[15px]"><a href="https://github.com/Alejandrox27?tab=repositories" target="_blank">Github proyects</a></li>
+                <li class="px-[15px]"><a href="https://github.com/Alejandrox27?tab=repositories" target="_blank">Github repositories</a></li>
             </ul>
         </div>
 
@@ -24,7 +24,7 @@
              <path id="motionpath" d="M -514 0 0 0" /> 
             </defs>
             <g >
-             <use xlink:href="#wavepath" y="74" fill="#200c41">
+             <use id="wave-color" xlink:href="#wavepath" y="74" fill="#200c41" class="transition-all">
              <animateMotion
               dur="5s"
               repeatCount="indefinite">
@@ -157,4 +157,26 @@ body {
             menuBackdrop.style.visibility = 'hidden'
         })
     })
+</script>
+<script>
+  const wave = document.querySelector('#wave-color') as HTMLElement
+
+  const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.90
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          const {isIntersecting} = entry
+          if (isIntersecting){
+              const color = entry.target.getAttribute('data-header-colors')
+              wave.setAttribute('fill', color)
+          }
+      })
+  }, observerOptions)
+
+  const sectionElements = document.querySelectorAll('.landing-section')
+  sectionElements.forEach(section => observer.observe(section))
 </script>

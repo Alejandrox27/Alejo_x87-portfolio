@@ -1,9 +1,13 @@
-<section class="presentation-section bg-[#27005D] h-screen w-[100%] px-44 flex flex-col-reverse justify-center align-middle items-center sm:flex-row">
-    <div class="flex flex-col gap-3 w-screen">
+---
+import Icons from "./Icons.astro"
+---
+
+<section class="landing-section presentation-section bg-[#27005D] h-screen w-[100%] px-44 flex flex-col-reverse justify-center align-middle items-center sm:flex-row" data-header-colors="#200C41">
+    <div class="flex flex-col gap-3 w-screen items-center justify-center">
         <h1 class="text-[#f0f0f0] text-5xl text-center sm:text-6xl pt-5">Hi, i'm Alejo<span class="text-[#BC7AF9]">Dev</span></h1>
         <h2 class="text-[#F8FF95] text-2xl text-center sm:text-3xl">Fullstack developer</h2>
-        <div>
-            <!--icons -->
+        <div class="flex items-center justify-around min-w-[200px] max-w-[200px]">
+            <Icons size="32px" color="#ffffff"></Icons>
         </div>
     </div>
     <div class="alejo-image-container w-[80%] items-center justify-center flex sm:w-50px">

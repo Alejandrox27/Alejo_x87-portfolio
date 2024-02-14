@@ -1,4 +1,7 @@
-<section id="skills" class="bg-[#27005D] h-screen w-[100%] flex justify-around items-center">
+<section id="skills" class="landing-section bg-[#27005D] h-screen w-[100%] flex justify-center items-center flex-col relative" data-header-colors="#200C41">
+    <div class="top-48 absolute">
+        <h2 class="text-[#ffffff] font-bold text-5xl">skills</h2>
+    </div>
     <div class="slider">
         <div class="slide-track">
             <div class="slide">
@@ -156,6 +159,27 @@
         100%{
             -webkit-transform: translateX(calc(-120px * 18));
             transform: translateX(calc(-120px * 18));
+        }
+    }
+
+    @media (max-width: 630px){
+        .slider .slide-track{
+            width: calc(80px * 36);
+        }
+
+        .slider .slide{
+            width: 80px;
+        }
+
+        @keyframes scroll {
+            0%{
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            100%{
+                -webkit-transform: translateX(calc(-80px * 18));
+                transform: translateX(calc(-80px * 18));
+            }
         }
     }
 </style>
