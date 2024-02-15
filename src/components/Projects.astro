@@ -1,3 +1,43 @@
-<section id="proyects" class="landing-section projects-section bg-[#191825] h-screen w-[100%] px-44 flex flex-col-reverse justify-center align-middle items-center sm:flex-row" data-header-colors="#100f17">
-    
+---
+import ProjectCard from "./ProjectCard.astro"
+---
+
+<section id="projects" class="landing-section projects-section bg-[#191825] h-screen w-[100%] px-44 pt-20" data-header-colors="#100f17">
+    <div class="grid1">
+        <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL shortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
+            <img 
+            slot="header-img"
+            src="/alejodev-image.jpg" 
+            alt="project immage"
+            class="w-[250px]"
+            style="border-radius: 24px;">
+        </ProjectCard>
+        <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL shortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
+            <img 
+            slot="header-img"
+            src="/alejodev-image.jpg" 
+            alt="project immage"
+            class="w-[250px]"
+            style="border-radius: 24px;">
+        </ProjectCard>
+        <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL shortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
+            <img 
+            slot="header-img"
+            src="/alejodev-image.jpg" 
+            alt="project immage"
+            class="w-[250px]"
+            style="border-radius: 24px;">
+        </ProjectCard>
+    </div>
 </section>
+<style>
+    .grid1{
+        display: grid;
+        box-sizing: border-box;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+</style>
