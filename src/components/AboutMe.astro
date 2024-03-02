@@ -1,11 +1,14 @@
 <section id="aboutme" class="landing-section aboutme-section bg-[#191825] flex justify-end items-center h-screen w-[100%]" data-header-colors="#100f17">
-    <div class="w-[50%] h-screen flex flex-col items-center justify-center p-14 text-white">
-        <h2 class="text-yellow-200 font-bold text-3xl">About Me</h2>
+    <div class="max-[950px]:w-[100%] w-[50%] h-screen flex flex-col items-center justify-center p-14 text-white">
+        <h2 class="text-yellow-200 font-bold max-[640px]:text-2xl text-3xl">About Me</h2>
         <br>
         <hr/>
         <br>
-        <h3 class="text-purple-400 font-semibold text-2xl">"discipline and perseverance are part of my daily life."</h3>
-        <p class="font-normal text-xl">
+        <h3 class="text-purple-400 font-semibold max-[640px]:text-xl text-2xl">"discipline and perseverance are part of my daily life."</h3>
+        <br>
+        <hr/>
+        <br>
+        <p class="font-normal max-[640px]:text-sm text-xl">
             I have decided to be a Fullstack programmer because I love all fields of programming
             and I like to learn different technologies of all kinds.
             Everyday I am quite proactive and constant to do my projects and my studies.
@@ -25,5 +28,11 @@
         color: white;
         height: 2px;
         width: 100%;
+    }
+
+    @media (max-width: 1056px) {
+        #aboutme{
+            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0)), url("/1041uuu.gif");
+        }
     }
 </style>
