@@ -10,73 +10,46 @@ import ProjectCard from "./ProjectCard.astro"
             
             <div class="glider w-[100%]">
 
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL shortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
+                <ProjectCard projectTitle="Short URL" projectInfo=`In this proyect you can shorten a URL with my program
+                here you can short an url, login and register with your account and connect to mongodb for urls and profiles` 
+                urlProject="https://github.com/Alejandrox27/short-url">
                     <img 
                     slot="header-img"
-                    src="/alejodev-image.jpg" 
+                    src="/shorturl.png" 
                     alt="project immage"
-                    class="w-[250px]"
+                    class="w-[250px] min-w-[250px] h-[250px] min-h-[250px] object-cover"
                     style="border-radius: 24px;">
                 </ProjectCard>
-    
-                <ProjectCard projectTitle="Title" projectInfo="Information aboutasily.">
+
+                <ProjectCard projectTitle="Fortune Wheel" projectInfo=`This is a Fortune wheel, the templates where used from the youtube 
+                channel JAB but all the proyect was made by me.` 
+                urlProject="https://github.com/Alejandrox27/Fortune-wheel">
                     <img 
                     slot="header-img"
-                    src="/alejodev-image.jpg" 
+                    src="/fortuneWheel.png" 
                     alt="project immage"
-                    class="w-[250px]"
+                    class="w-[250px] min-w-[250px] h-[250px] min-h-[250px] object-cover"
                     style="border-radius: 24px;">
                 </ProjectCard>
-    
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL g urls to make them more compact so you can use them more easily.">
+
+                <ProjectCard projectTitle="Api Crud fastapi" projectInfo=`This python app is an Api crud for products and users. 
+                i made a OAuth2 authentication for users` 
+                urlProject="https://github.com/Alejandrox27/API-CRUD">
                     <img 
                     slot="header-img"
-                    src="/alejodev-image.jpg" 
+                    src="/users.png" 
                     alt="project immage"
-                    class="w-[250px]"
+                    class="w-[250px] min-w-[250px] h-[250px] min-h-[250px] object-cover"
                     style="border-radius: 24px;">
                 </ProjectCard>
-    
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, liortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
+
+                <ProjectCard projectTitle="Chat way" projectInfo=`This is a simple chat application made with firebase and native javascript. this chat is very simple, so all persons could see your conversation. I'll make a V.2 of this project in the future` 
+                urlProject="https://github.com/Alejandrox27/Chat-way">
                     <img 
                     slot="header-img"
-                    src="/alejodev-image.jpg" 
+                    src="/chatway.png" 
                     alt="project immage"
-                    class="w-[250px]"
-                    style="border-radius: 24px;">
-                </ProjectCard>
-    
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL shortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
-                    <img 
-                    slot="header-img"
-                    src="/alejodev-image.jpg" 
-                    alt="project immage"
-                    class="w-[250px]"
-                    style="border-radius: 24px;">
-                </ProjectCard>
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, liortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
-                    <img 
-                    slot="header-img"
-                    src="/alejodev-image.jpg" 
-                    alt="project immage"
-                    class="w-[250px]"
-                    style="border-radius: 24px;">
-                </ProjectCard>
-    
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, like, This webpage is an URL shortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
-                    <img 
-                    slot="header-img"
-                    src="/alejodev-image.jpg" 
-                    alt="project immage"
-                    class="w-[250px]"
-                    style="border-radius: 24px;">
-                </ProjectCard>
-                <ProjectCard projectTitle="Title" projectInfo="Information about the project, liortener, in here you will be able to store your long urls to make them more compact so you can use them more easily.">
-                    <img 
-                    slot="header-img"
-                    src="/alejodev-image.jpg" 
-                    alt="project immage"
-                    class="w-[250px]"
+                    class="w-[250px] min-w-[250px] h-[250px] min-h-[250px] object-cover"
                     style="border-radius: 24px;">
                 </ProjectCard>
 
@@ -105,7 +78,7 @@ import ProjectCard from "./ProjectCard.astro"
       breakpoint: 775,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         itemWidth: 150,
         duration: 0.25
       }
@@ -114,7 +87,7 @@ import ProjectCard from "./ProjectCard.astro"
       breakpoint: 1024,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         itemWidth: 150,
         duration: 0.25
       }
